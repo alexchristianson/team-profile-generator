@@ -1,0 +1,27 @@
+{
+  "name": "team-profile-generator",
+  "version": "1.0.0",
+  "description": "software engineering team generator",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "dependencies": {
+    "inquirer": "^8.2.0",
+    "jest": "^27.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexchristianson/team-profile-generator.git"
+  },
+  "author": "Alex Christianson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alexchristianson/team-profile-generator/issues"
+  },
+  "homepage": "https://github.com/alexchristianson/team-profile-generator#readme"
+}
