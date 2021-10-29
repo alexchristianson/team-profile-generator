@@ -20,4 +20,4 @@ test('getRole() should return "Intern"', () => {
     const intern = new Intern("Bob", 111, "bob@email.com", "UW-Madison");
 
     expect(intern.getRole()).toEqual(testRole);
-})
+});
