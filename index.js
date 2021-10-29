@@ -35,7 +35,7 @@ function startPrompts () {
         ).then(response => {
             const manager = new Manager(response.name, response.id, response.email, response.officeNumber);
             team.push(manager);
-            // function to restart prompts
+            addEmployee();
         })
     }
     function addEmployee() {
@@ -43,12 +43,12 @@ function startPrompts () {
             [
                 {
                     type: 'list',
-                    message: 'What type of employee do you want to add?',
+                    message: 'What type of team member do you want to add?',
                     name: 'employeeType',
                     choices: [
                         "Engineer",
                         "Intern",
-                        "None"
+                        "I don't want to add any more team members"
                     ]
                 }
             ]
@@ -63,10 +63,57 @@ function startPrompts () {
         });
     }
     function engineerPrompts() {
-        inquirer.prompt()
+        inquirer.prompt(
+            [
+                {
+                    type: 'input',
+                    message: "What is the engineer's name?",
+                    name: "name"
+                },
+                {
+                    type: "input",
+                    message: "Enter ID.",
+                    name: "id"
+                },
+                {
+                    type: "input",
+                    message: "Enter email address.",
+                    name: "email"
+                },
+                {
+                    type: "input",
+                    message: "Enter github username.",
+                    name: "github"
+                }
+            ]
+        )
     }
     function internPrompts() {
-        inquirer.prompt()
+        inquirer.prompt(
+            [
+                {
+                    type: "input",
+                    message: "What is the intern's name?",
+                    name: "name"
+                },
+                {
+                    type: "input",
+                    message: "What is the intern's id.",
+                    name: "id"
+                },
+                {
+                    type: "input",
+                    message: "What is the intern's email address.",
+                    name: "email"
+                },
+                {
+                    type: "input",
+                    message: "What is the intern's school?",
+                    name: "school"
+                }
+
+            ]
+        )
     }
     function generateHTML() {
         fs.writeFileSync("./output/team.html", generateEmployees(team),"UTF-8")
