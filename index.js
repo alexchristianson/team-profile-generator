@@ -61,7 +61,7 @@ function startPrompts () {
                 internPrompts();
             }
         });
-    }
+    };
     function engineerPrompts() {
         inquirer.prompt(
             [
@@ -86,8 +86,12 @@ function startPrompts () {
                     name: "github"
                 }
             ]
-        )
-    }
+        ).then(response => {
+            const engineer = new Engineer(response.name, response.id, response.email, response.github);
+            team.push(engineer);
+            addEmployee();
+        })
+    };
     function internPrompts() {
         inquirer.prompt(
             [
@@ -113,10 +117,14 @@ function startPrompts () {
                 }
 
             ]
-        )
+        ).then(response => {
+            const intern = new Intern(response.name, response.id, response.email, response.school);
+            team.push(intern);
+            addEmployee();
+        })
     }
     function generateHTML() {
-        fs.writeFileSync("./output/team.html", generateEmployees(team),"UTF-8")
+        fs.writeFileSync("./dist/team.html", generateEmployees(team),"UTF-8")
         // if error add ", error => console.log(error)"
     }
 };
