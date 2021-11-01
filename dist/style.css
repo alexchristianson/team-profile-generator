@@ -1,13 +1,15 @@
+/* jumbotron styling */
+.jumbotron {
+    height: 100px;
+    padding-top: 20px;
+    background-color: rgb(73, 22, 121);
+}
+
+/* card styling */
 .card {
     color:white;
 }
 
 .card-header {
     background-color: rgb(38, 147, 190);
-}
-
-.jumbotron {
-    height: 100px;
-    padding-top: 20px;
-    background-color: rgb(73, 22, 121);
 }

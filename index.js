@@ -121,12 +121,10 @@ function internPrompts() {
                 message: "What is the intern's school?",
                 name: "school"
             }
-
         ]
     ).then(response => {
         const intern = new Intern(response.name, response.id, response.email, response.school);
         internArray.push(intern);
         addEmployee();
     })
-
 };
